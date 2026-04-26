@@ -1,6 +1,6 @@
 import {
   useMutation,
-  type UseMutationResult,
+  UseMutationResult,
   useQueryClient,
 } from "@tanstack/react-query";
 import { resAuth } from "@/app/(Modules)/auth/repo/resAuth";
@@ -15,7 +15,7 @@ export const useLogin = (): UseMutationResult<
   return useMutation({
     mutationFn: resAuth.login,
     onSuccess: () => {
-        console.log("success");
+      console.log("success");
     },
     onError: () => {
       queryClient.invalidateQueries({ queryKey: ["me"] });

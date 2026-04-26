@@ -1,7 +1,11 @@
 import React from "react";
 import LoginForm from "./_Components/login";
 import { Card, CardHeader } from "@/components/ui/card";
+import { Metadata } from "next";
 
+export const metadata: Metadata = {
+  title: "Login",
+};
 const LoginPage = () => {
   return (
     <div className="w-screen flex justify-center items-center mt-8">

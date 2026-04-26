@@ -2,45 +2,14 @@ import { Input } from "@/components/ui/input";
 import ServiceCard from "./_Components/service-card";
 import ServiceTable from "./_Components/service-table";
 import { Button } from "@/components/ui/button";
-import Service from "./entity/service";
+import Service from "./_entity/service";
 import transformingTheDateToATextString from "../utils/date-to-string";
+import { Metadata } from "next";
 
-const instanceOfServices: {
-  image: string[];
-  name: string;
-  deration: number;
-  price: number;
-  createdAt: string;
-}[] = [
-  {
-    createdAt: "1-1-2027",
-    deration: 30,
-    image: [],
-    name: "",
-    price: 10,
-  },
-  {
-    createdAt: "1-1-2027",
-    deration: 30,
-    image: [],
-    name: "",
-    price: 10,
-  },
-  {
-    createdAt: "1-1-2027",
-    deration: 30,
-    image: [],
-    name: "",
-    price: 10,
-  },
-  {
-    createdAt: "1-1-2027",
-    deration: 30,
-    image: [],
-    name: "",
-    price: 10,
-  },
-];
+export const metadata: Metadata = {
+  title: "Services",
+};
+
 const defaultImage =
   "https://res.cloudinary.com/dsudicotm/image/upload/v1776600183/ecommerce-billboards/tsxveaa9qpyamqyf6eue.jpg";
 const ServicesPage = async () => {
@@ -59,7 +28,7 @@ const ServicesPage = async () => {
         {services.map((service, index) => (
           <ServiceCard
             key={index}
-            image={defaultImage}
+            image={service.images[0] || defaultImage}
             createdAt={transformingTheDateToATextString(service.createdAt)}
             deration={service.duration}
             name={service.name}

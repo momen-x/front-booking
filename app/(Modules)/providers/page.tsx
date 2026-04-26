@@ -5,6 +5,11 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import AddAvailableTimes from "./_Components/add-available-time";
 import Provider from "./entities/provider";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Provider",
+};
 
 const ProviderPage = async () => {
   const response = await fetch("http://localhost:5000/api/provider-profile");
