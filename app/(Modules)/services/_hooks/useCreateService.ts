@@ -21,7 +21,7 @@ export const useCreateService = (): UseMutationResult<
       });
     },
     onError: (err: Error) => {
-      console.log(err);
+      console.error(err);
     },
   });
 };

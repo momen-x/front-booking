@@ -11,25 +11,10 @@ import { Separator } from "@/components/ui/separator";
 import { Calendar, Clock, DollarSign, MapPin, User } from "lucide-react";
 import Image from "next/image";
 import { useState } from "react";
+import Service from "../_entity/service";
+import { defaultImage } from "@/app/utils/constance";
+import transformingTheDateToATextString from "../../utils/date-to-string";
 
-const instanceOfService = {
-  createdAt: "1-1-2027",
-  deration: 30,
-  image: [
-    "https://res.cloudinary.com/dsudicotm/image/upload/v1776600183/ecommerce-billboards/tsxveaa9qpyamqyf6eue.jpg",
-    "https://res.cloudinary.com/dsudicotm/image/upload/v1776600183/ecommerce-billboards/tsxveaa9qpyamqyf6eue.jpg",
-    "https://res.cloudinary.com/dsudicotm/image/upload/v1776600183/ecommerce-billboards/tsxveaa9qpyamqyf6eue.jpg",
-    "https://res.cloudinary.com/dsudicotm/image/upload/v1776600183/ecommerce-billboards/tsxveaa9qpyamqyf6eue.jpg",
-    "https://res.cloudinary.com/dsudicotm/image/upload/v1776600183/ecommerce-billboards/tsxveaa9qpyamqyf6eue.jpg",
-  ],
-  name: "Premium Haircut",
-  price: 10,
-  businessName: "Elite Barber Shop",
-  location: "123 Main Street, Downtown",
-};
-
-const defaultImage =
-  "https://res.cloudinary.com/dsudicotm/image/upload/v1776600183/ecommerce-billboards/tsxveaa9qpyamqyf6eue.jpg";
 
 const days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"];
 const availableTimes = [
@@ -47,7 +32,16 @@ const availableTimes = [
   "09:00 PM",
 ];
 
-const BookingServiceCard = () => {
+const BookingServiceCard = ({
+  name,
+  duration,
+  price,
+  createdAt,
+  id,
+  images,
+  businessName,
+  location,
+}: Service & { businessName: string; location: string }) => {
   const [selectedDay, setSelectedDay] = useState<string>("");
   const [selectedTime, setSelectedTime] = useState<string>("");
 
@@ -59,8 +53,8 @@ const BookingServiceCard = () => {
           <div className="relative">
             <div className="relative h-64 md:h-full min-h-75 bg-linear-to-br from-gray-100 to-gray-200">
               <Image
-                src={instanceOfService.image[0]}
-                alt={instanceOfService.name}
+                src={images[0] || defaultImage}
+                alt={name}
                 fill
                 className="object-cover"
               />
@@ -68,17 +62,17 @@ const BookingServiceCard = () => {
                 Popular
               </Badge>
             </div>
-            {instanceOfService.image.length > 0 && (
+            {images.length > 0 && (
               <div className="absolute bottom-4 left-4 right-4">
                 <div className="flex gap-2 overflow-x-auto pb-2">
-                  {instanceOfService.image.map((image, index) => (
+                  {images.map((image, index) => (
                     <div
                       key={index}
                       className="relative w-16 h-16 rounded-md overflow-hidden cursor-pointer ring-2 ring-white"
                     >
                       <Image
                         src={image}
-                        alt={`${instanceOfService.name} view ${index + 1}`}
+                        alt={`${name} view ${index + 1}`}
                         fill
                         className="object-cover"
                       />
@@ -94,17 +88,13 @@ const BookingServiceCard = () => {
             <CardHeader className="px-0 pt-0">
               <div className="flex justify-between items-start">
                 <div>
-                  <h1 className="text-2xl font-bold text-gray-900">
-                    {instanceOfService.name}
-                  </h1>
-                  <p className="text-sm text-gray-500 mt-1">
-                    {instanceOfService.businessName}
-                  </p>
+                  <h1 className="text-2xl font-bold text-gray-900">{name}</h1>
+                  <p className="text-sm text-gray-500 mt-1">{businessName}</p>
                 </div>
                 <div className="text-right">
                   <div className="flex items-center gap-1 text-2xl font-bold text-primary">
                     <DollarSign className="h-5 w-5" />
-                    {instanceOfService.price}
+                    {price}
                   </div>
                   <p className="text-xs text-gray-400">per person</p>
                 </div>
@@ -116,17 +106,19 @@ const BookingServiceCard = () => {
               <div className="flex gap-4 text-sm text-gray-600">
                 <div className="flex items-center gap-1">
                   <Clock className="h-4 w-4" />
-                  <span>{instanceOfService.deration} mins</span>
+                  <span>{duration} mins</span>
                 </div>
                 <div className="flex items-center gap-1">
                   <Calendar className="h-4 w-4" />
-                  <span>Started {instanceOfService.createdAt}</span>
+                  <span>
+                    Started {transformingTheDateToATextString(createdAt)}
+                  </span>
                 </div>
               </div>
 
               <div className="flex items-start gap-1 text-sm text-gray-600">
                 <MapPin className="h-4 w-4 mt-0.5 shrink-0" />
-                <span>{instanceOfService.location}</span>
+                <span>{location}</span>
               </div>
 
               <Separator />
@@ -187,7 +179,7 @@ const BookingServiceCard = () => {
                 className="w-full bg-primary hover:bg-primary/90 text-white py-6 text-lg font-semibold"
                 disabled={!selectedDay || !selectedTime}
               >
-                Book Appointment - ${instanceOfService.price}
+                Book Appointment - ${price}
               </Button>
             </CardFooter>
           </div>

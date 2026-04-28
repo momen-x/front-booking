@@ -3,8 +3,9 @@ import {
   UseMutationResult,
   useQueryClient,
 } from "@tanstack/react-query";
-import { resAuth } from "@/app/(Modules)/auth/repo/resAuth";
-import { TRegisterSchema } from "@/app/(Modules)/auth/dto/register";
+import { TRegisterSchema } from "../_dto/register";
+import { resAuth } from "../_repo/resAuth";
+
 
 export const useRegister = (): UseMutationResult<
   { success: boolean },

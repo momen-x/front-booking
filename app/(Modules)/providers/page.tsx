@@ -14,7 +14,6 @@ export const metadata: Metadata = {
 const ProviderPage = async () => {
   const response = await fetch("http://localhost:5000/api/provider-profile");
   const providers: Provider[] = await response.json();
-  console.log("the providers is : ", providers);
 
   return (
     <div className="container mx-auto px-4 py-8">

@@ -8,10 +8,10 @@ import { toast } from "react-toastify";
 import { useRouter } from "next/navigation";
 // validations
 import ValidationInput from "@/components/inputs/ValidationInput";
-import { loginSchema, TLogin } from "../../dto/login";
+import { loginSchema, TLogin } from "../../_dto/login";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useLogin } from "../../hooks/useLogin";
+import { useLogin } from "../../_hooks/useLogin";
 import getErrorMessage from "../../../utils/getErrorMessage";
 
 const LoginForm = () => {

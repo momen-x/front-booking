@@ -20,8 +20,8 @@ export const useUpdateService = (): UseMutationResult<
         queryKey: ["services"],
       });
     },
-    onError: (err: Error) => {
-      console.log(err);
+    onError: (error: Error) => {
+      console.error(error);
     },
   });
 };

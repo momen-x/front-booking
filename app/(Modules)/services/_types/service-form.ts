@@ -14,6 +14,5 @@ type UpdateMode = {
 
 export type TServiceProps = (AddMode | UpdateMode) & {
   description?: string;
-  isLoading?: boolean;
   providerId:string;
 };

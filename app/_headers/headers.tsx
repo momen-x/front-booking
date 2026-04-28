@@ -7,8 +7,8 @@ import { Button } from "@/components/ui/button";
 import { BellRing, Calendar, Menu, X } from "lucide-react";
 import { ModeToggleBtn } from "./ModeToggleBtn";
 import { useRouter } from "next/navigation";
-import { Badge } from "@/components/ui/badge";
 import NotificationButton from "./notifications";
+import LogoutBtn from "../(Modules)/(auth)/_logout/logout-btn";
 
 const navLinks = [
   { href: "/services", label: "Services" },
@@ -44,15 +44,16 @@ const Header = () => {
 
         {/* Desktop Actions */}
         <div className="hidden md:flex items-center gap-2">
-         <NotificationButton/>
+          <NotificationButton />
+          <LogoutBtn />
           <Button
             variant="ghost"
             size="sm"
-            onClick={() => router.push("/auth/login")}
+            onClick={() => router.push("/login")}
           >
             Sign In
           </Button>
-          <Button size="sm" onClick={() => router.push("/auth/register")}>
+          <Button size="sm" onClick={() => router.push("/register")}>
             Sign Up
           </Button>
           <Button variant="outline" size="sm">
@@ -93,7 +94,7 @@ const Header = () => {
           <Button variant="ghost" className="justify-start">
             Sign In
           </Button>
-          <Button onClick={() => router.push("/auth/register")}>Sign Up</Button>
+          <Button onClick={() => router.push("/register")}>Sign Up</Button>
           <Button variant="outline">Become a Pro</Button>
         </div>
       )}

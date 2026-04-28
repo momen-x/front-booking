@@ -4,27 +4,26 @@ import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import { Clock, Calendar, Star } from "lucide-react";
 import Link from "next/link";
+import Service from "../_entity/service";
+import transformingTheDateToATextString from "../../utils/date-to-string";
 
+const defaultImage =
+  "https://res.cloudinary.com/dsudicotm/image/upload/v1776600183/ecommerce-billboards/tsxveaa9qpyamqyf6eue.jpg";
 const ServiceCard = ({
-  image,
+  images,
   name,
-  deration,
+  duration,
   price,
   createdAt,
-}: {
-  image: string;
-  name: string;
-  deration: number;
-  price: number;
-  createdAt: string;
-}) => {
+  id,
+}: Service) => {
   return (
     <Card className="group overflow-hidden transition-all duration-300 hover:shadow-xl border bg-card h-full flex flex-col">
       {/* Image Container */}
       <div className="relative overflow-hidden bg-linear-to-br from-gray-100 to-gray-200 dark:from-gray-800 dark:to-gray-900">
         <div className="aspect-video relative">
           <Image
-            src={image}
+            src={images[0] || defaultImage}
             alt={name}
             fill
             className="object-cover transition-transform duration-300 group-hover:scale-105"
@@ -51,19 +50,19 @@ const ServiceCard = ({
           <div className="flex items-center gap-2 text-sm text-muted-foreground">
             <Clock className="h-4 w-4" />
             <span>
-              {deration} {deration === 1 ? "minute" : "minutes"}
+              {duration} {duration === 1 ? "minute" : "minutes"}
             </span>
           </div>
 
           {/* Created At */}
           <div className="flex items-center gap-2 text-sm text-muted-foreground">
             <Calendar className="h-4 w-4" />
-            <span>{new Date(createdAt).toLocaleDateString()}</span>
+            <span>{transformingTheDateToATextString(createdAt)}</span>
           </div>
         </div>
 
         {/* Book Button */}
-        <Link href="/services/booking">
+        <Link href={`/services/${id}/booking`}>
           <Button className="w-full mt-auto bg-linear-to-r from-amber-500 to-orange-600 hover:from-amber-600 hover:to-orange-700 text-white gap-2">
             <Star className="h-4 w-4" />
             Book Now

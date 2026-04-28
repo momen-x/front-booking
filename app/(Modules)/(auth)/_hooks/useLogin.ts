@@ -3,8 +3,9 @@ import {
   UseMutationResult,
   useQueryClient,
 } from "@tanstack/react-query";
-import { resAuth } from "@/app/(Modules)/auth/repo/resAuth";
-import { TLogin } from "@/app/(Modules)/auth/dto/login";
+import { TLogin } from "../_dto/login";
+import { resAuth } from "../_repo/resAuth";
+
 
 export const useLogin = (): UseMutationResult<
   { success: boolean },
