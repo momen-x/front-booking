@@ -1,5 +1,5 @@
 import { queryClient } from "../_providers/react-query-provider";
-import { API_DOMAIN } from "./constance";
+import { API_DOMAIN, CURRENT_USER_QUERY_KEY } from "./constance";
 
 import axios from "axios";
 
@@ -11,8 +11,8 @@ const api = axios.create({
 api.interceptors.response.use(
   (response) => response,
   (error) => {
-    if (error) {
-      queryClient.removeQueries({ queryKey: ["me"] });
+    if (error.response?.status === 401) {
+      queryClient.removeQueries({ queryKey: [CURRENT_USER_QUERY_KEY] });
     }
     return Promise.reject(error);
   },

@@ -49,4 +49,8 @@ export const resAuth: IAuthAPI = {
     const res = await api.post(`/api/provider-request`, formData);
     return res.data;
   },
+  getCurrentUser: async () => {
+    const res = await api.get(`/api/users/current-user`);
+    return res.data;
+  },
 };

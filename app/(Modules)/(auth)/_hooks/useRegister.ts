@@ -5,7 +5,7 @@ import {
 } from "@tanstack/react-query";
 import { TRegisterSchema } from "../_dto/register";
 import { resAuth } from "../_repo/resAuth";
-
+import { CURRENT_USER_QUERY_KEY } from "@/app/utils/constance";
 
 export const useRegister = (): UseMutationResult<
   { success: boolean },
@@ -19,7 +19,7 @@ export const useRegister = (): UseMutationResult<
       console.log("success");
     },
     onError: () => {
-      queryClient.invalidateQueries({ queryKey: ["me"] });
+      queryClient.invalidateQueries({ queryKey: [CURRENT_USER_QUERY_KEY] });
     },
   });
 };

@@ -1,4 +1,3 @@
-import React from "react";
 import LoginForm from "./_Components/login";
 import { Card, CardHeader } from "@/components/ui/card";
 import { Metadata } from "next";

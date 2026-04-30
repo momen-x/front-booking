@@ -1,3 +1,4 @@
+import User from "../../(users)/_entity/user";
 import { TLogin } from "../_dto/login";
 import { TProviderRequest } from "../_dto/provider-request";
 import { TRegisterSchema } from "../_dto/register";
@@ -7,6 +8,7 @@ interface IAuthAPI {
   register: (data: TRegisterSchema) => Promise<{ success: boolean }>;
   logout: () => Promise<{ success: boolean }>;
   requestProvider: (data: TProviderRequest) => Promise<{ success: boolean }>;
+  getCurrentUser: () => Promise<User>;
 }
 
 export default IAuthAPI;

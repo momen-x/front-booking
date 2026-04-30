@@ -246,7 +246,7 @@ const ProviderForm = () => {
   };
 
   return (
-    <div className="min-h-screen bg-linear-to-br from-amber-50/60 via-white to-orange-50/40 dark:from-zinc-950 dark:via-zinc-900 dark:to-zinc-950 py-10 px-4">
+    <div className="min-h-screen b dark:from-zinc-950 dark:via-zinc-900 dark:to-zinc-950 py-10 px-4">
       <div className="max-w-2xl mx-auto">
         <Link
           href="/auth/register"
@@ -266,7 +266,7 @@ const ProviderForm = () => {
           </span>
         </div>
 
-        <Card className="border-0 shadow-2xl shadow-amber-100/60 dark:shadow-black/40 rounded-2xl overflow-hidden bg-white dark:bg-zinc-900">
+        <Card className="border-0 shadow-2xl shadow-amber-100/60 dark:shadow-black/40 rounded-2xl overflow-hidden ">
           <div className="h-2 w-full bg-linear-to-r from-amber-400 via-orange-400 to-amber-500" />
 
           <CardHeader className="px-8 pt-8 pb-6">
@@ -275,7 +275,7 @@ const ProviderForm = () => {
                 <Building2 className="h-6 w-6 text-white" />
               </div>
               <div>
-                <h1 className="text-xl font-bold text-foreground tracking-tight dark:text-white">
+                <h1 className="text-xl font-bold text-foreground tracking-tight ">
                   Provider Verification
                 </h1>
                 <p className="mt-1 text-sm text-muted-foreground dark:text-zinc-400">
@@ -313,7 +313,7 @@ const ProviderForm = () => {
                     fieldTitle="Provider Name"
                     nameInSchema="provideName"
                     placeholder="e.g. Shear Excellence Salon"
-                    className="h-11 dark:bg-zinc-800 dark:border-zinc-700 dark:text-white"
+                    className="h-11   "
                   />
                 </div>
 
@@ -327,25 +327,25 @@ const ProviderForm = () => {
                       fieldTitle="ID Number"
                       nameInSchema="IDNumber"
                       placeholder="e.g. 20186454"
-                      className="h-11 dark:bg-zinc-800 dark:border-zinc-700 dark:text-white"
+                      className="h-11 "
                     />
                     <ValidationInput<TProviderRequest>
                       fieldTitle="Full Name (as on ID)"
                       nameInSchema="fullName"
                       placeholder="e.g. John Hasan Doe"
-                      className="h-11 dark:bg-zinc-800 dark:border-zinc-700 dark:text-white"
+                      className="h-11 "
                     />
                     <ValidationInput<TProviderRequest>
                       fieldTitle="Date of Birth"
                       nameInSchema="birthday"
                       type="date"
-                      className="h-11 dark:bg-zinc-800 dark:border-zinc-700 dark:text-white"
+                      className="h-11 "
                     />
                     <ValidationInput<TProviderRequest>
                       fieldTitle="Nationality"
                       nameInSchema="nationality"
                       placeholder="e.g. Palestinian"
-                      className="h-11 dark:bg-zinc-800 dark:border-zinc-700 dark:text-white"
+                      className="h-11 "
                     />
                   </div>
                   <div className="mt-4">
@@ -353,7 +353,7 @@ const ProviderForm = () => {
                       fieldTitle="Location"
                       nameInSchema="location"
                       placeholder="e.g. Palestine - Gaza"
-                      className="h-11 dark:bg-zinc-800 dark:border-zinc-700 dark:text-white"
+                      className="h-11 "
                     />
                   </div>
                 </div>
@@ -442,7 +442,7 @@ const ProviderForm = () => {
                     <TabsList className="w-full rounded-xl bg-muted/50 dark:bg-zinc-800 p-1 h-auto">
                       <TabsTrigger
                         value="upload"
-                        className="flex-1 gap-2 rounded-lg py-2 data-[state=active]:bg-white dark:data-[state=active]:bg-zinc-900 dark:data-[state=active]:text-white"
+                        className="flex-1 gap-2 rounded-lg py-2  dark:data-[state=active]:text-white"
                       >
                         <Upload className="h-3.5 w-3.5" />
                         Upload Images

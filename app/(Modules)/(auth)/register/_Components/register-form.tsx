@@ -222,7 +222,7 @@ export function RegisterForm() {
                   </Link>{" "}
                   and{" "}
                   <Link
-                    href="/privacy"
+                    href="/policy"
                     className="text-foreground font-medium underline underline-offset-2"
                   >
                     Privacy Policy
