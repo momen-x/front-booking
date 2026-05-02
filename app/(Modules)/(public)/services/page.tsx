@@ -1,6 +1,5 @@
 import { Input } from "@/components/ui/input";
 import ServiceCard from "./_Components/service-card";
-import ServiceTable from "../../(admin)/service/_components/service-table";
 import { Button } from "@/components/ui/button";
 import Service from "./_entity/service";
 import { Metadata } from "next";
@@ -25,7 +24,7 @@ const ServicesPage = async () => {
           <ServiceCard key={index} {...service} />
         ))}
       </div>
-      <ServiceTable />
+      {/* <ServiceTable /> */}
     </div>
   );
 };

@@ -1,5 +1,5 @@
 import IParams from "@/app/(Modules)/type/params";
-import BookingServiceCard from "../../../../(provider)/services/_components/booking-service-card";
+import BookingServiceCard from "../../../../(provider)/provider-dashboard/services/_components/booking-service-card";
 
 const BookingServicePage = async ({ params }: IParams) => {
   const { id } = await params;

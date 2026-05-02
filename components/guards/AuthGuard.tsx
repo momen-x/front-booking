@@ -13,8 +13,7 @@ const AuthGuard = ({ children }: Props) => {
   const router = useRouter();
 
   useEffect(() => {
-    console.log("the user is ", user);
-    if (!isLoading && (!user)) {
+    if (!isLoading && !user) {
       router.replace("/login"); // better UX than /forbidden
     }
   }, [isLoading, user, router]);

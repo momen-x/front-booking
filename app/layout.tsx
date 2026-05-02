@@ -5,6 +5,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 import Headers from "./_headers/headers";
 import ReactQueryProviders from "./_providers/react-query-provider";
 import ToasterProvider from "./_providers/toast-provider";
+import { TooltipProvider } from "@/components/ui/tooltip";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -42,7 +43,7 @@ export default function RootLayout({
           <ReactQueryProviders>
             <ToasterProvider />
             <Headers />
-            {children}
+            <TooltipProvider>{children}</TooltipProvider>
           </ReactQueryProviders>
         </ThemeProvider>
       </body>
