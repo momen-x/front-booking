@@ -5,7 +5,7 @@ import {
 } from "@tanstack/react-query";
 import { TUpdateUserPassword } from "../_dto/update-user-password";
 import resUser from "../_repo/resUser";
-import User from "@/app/(Modules)/(users)/_entity/user";
+import User from "@/app/(Modules)/(shared)/__entities/user";
 
 export const useUpdateUserPassword = (): UseMutationResult<
   User,

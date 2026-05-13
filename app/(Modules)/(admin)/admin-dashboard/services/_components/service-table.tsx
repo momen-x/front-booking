@@ -17,7 +17,7 @@ import {
   ImageIcon,
   AlertCircle,
 } from "lucide-react";
-import Service from "@/app/(Modules)/(public)/services/_entity/service";
+import Service from "@/app/(Modules)/(shared)/__entities/service";
 import Link from "next/link";
 
 const ServiceTable = ({ services }: { services: Service[] }) => {

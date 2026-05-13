@@ -6,6 +6,7 @@ const ProviderCard = ({
   businessName,
   description,
   location,
+  id
 }: {
   businessName: string;
   description?: string | null;
@@ -15,7 +16,7 @@ const ProviderCard = ({
   id: string;
 }) => {
   return (
-    <Link href={"/providers/1"}>
+    <Link href={`/providers/${id}`}>
       <Card className="h-full transition-all duration-200 hover:shadow-lg hover:scale-[1.05] border bg-card overflow cursor-pointer">
         <CardHeader className="pb-2">
           <div className="flex items-start gap-3">

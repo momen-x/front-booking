@@ -1,4 +1,4 @@
-import Service from "../../../../(public)/services/_entity/service";
+import Service from "../../../../(shared)/__entities/service";
 
 type AddMode = {
   goal: "add";

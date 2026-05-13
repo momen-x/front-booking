@@ -1,7 +1,7 @@
 import { Input } from "@/components/ui/input";
 import ServiceCard from "./_Components/service-card";
 import { Button } from "@/components/ui/button";
-import Service from "./_entity/service";
+import Service from "../../(shared)/__entities/service";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {

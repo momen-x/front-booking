@@ -1,4 +1,3 @@
-import { cookies } from "next/headers";
 import { Button } from "@/components/ui/button";
 import {
   Table,
@@ -17,24 +16,14 @@ import {
   FingerprintPattern,
 } from "lucide-react";
 import Link from "next/link";
-import User from "@/app/(Modules)/(users)/_entity/user";
 import Image from "next/image";
 import transformingTheDateToATextString from "@/app/(Modules)/utils/date-to-string";
+import { getAllUser } from "./_utils/serverFunctions";
 
 const UsersTable = async () => {
-  const cookieStore = await cookies();
-  const allCookies = cookieStore.toString();
-  const token = cookieStore.get("token")?.value;
-  const response = await fetch("http://localhost:5000/api/users", {
-    headers: {
-      Cookie: allCookies,
-      ...(token && { Authorization: `Bearer ${token}` }),
-    },
-  });
-  const users = (await response.json()) as User[];
-  if (!response.ok) {
-    const errorText = await response.text();
-    console.error(`Backend failed with status ${response.status}:`, errorText);
+  const users = await getAllUser();
+  if (!users) {
+    return <div>No users found</div>;
   }
 
   return (
@@ -117,7 +106,8 @@ const UsersTable = async () => {
 
                   <TableCell>
                     <div className="flex items-center justify-center gap-1">
-                      <Link href={`/services/${user.id}/booking`}>
+                      <Link href={`/admin-dashboard/users/user/${user.id}`}>
+                        {" "}
                         <Button
                           size="icon"
                           variant="ghost"

@@ -3,7 +3,7 @@ interface User {
   username?: string;
   userImage?: string;
   email: string;
-  role: UserRole;
+  role: "USER" | "PROVIDER" | "ADMIN";
   createdAt: Date;
   updatedAt: Date;
 }

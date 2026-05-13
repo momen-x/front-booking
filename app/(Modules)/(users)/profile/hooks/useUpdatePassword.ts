@@ -5,7 +5,7 @@ import {
 } from "@tanstack/react-query";
 import { TUpdatePassword } from "../_dto/update-user-profile";
 import resUserAPI from "../_repository/resUser";
-import User from "../../_entity/user";
+import User from "../../../(shared)/__entities/user";
 import { CURRENT_USER_QUERY_KEY } from "@/app/utils/constance";
 
 export const useUpdatePassword = (): UseMutationResult<

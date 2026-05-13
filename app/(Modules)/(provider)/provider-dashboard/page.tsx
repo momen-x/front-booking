@@ -1,12 +1,11 @@
 import { cookies } from "next/headers";
-import Provider from "./providers/entity/provider";
+import Provider from "../../(shared)/__entities/provider";
 import Link from "next/link";
 
 const ProviderDashboardPage = async () => {
   const cookieStore = await cookies();
   const allCookies = cookieStore.toString();
   const token = cookieStore.get("token")?.value;
-
 
   const response = await fetch(
     "http://localhost:5000/api/provider-profile/current-provider",
@@ -37,8 +36,9 @@ const ProviderDashboardPage = async () => {
 
   return (
     <div className="min-h-screen  py-8 px-4">
-      <Link href={"/provider-dashboard/providers/update"} 
-      className="bg-linear-to-r from-blue-600 to-blue-700 p-3 rounded-2xl hover:bg-amber-500  mb-10 text-center"
+      <Link
+        href={"/provider-dashboard/providers/update"}
+        className="bg-linear-to-r from-blue-600 to-blue-700 p-3 rounded-2xl hover:bg-amber-500  mb-10 text-center"
       >
         ⬅️ Update the provider data
       </Link>

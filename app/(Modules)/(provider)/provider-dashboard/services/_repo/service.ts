@@ -1,4 +1,4 @@
-import Service from "@/app/(Modules)/(public)/services/_entity/service";
+import Service from "@/app/(Modules)/(shared)/__entities/service";
 import { TService } from "../_dto/add-service";
 import { TUpdateService } from "../_dto/update-service";
 

@@ -6,6 +6,10 @@ interface Service {
   price: number;
   createdAt: Date;
   images: string[];
+  provider: {
+    businessName: string; 
+    location: string | null;
+  };
 }
 
 export default Service;

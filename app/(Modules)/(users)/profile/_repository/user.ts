@@ -1,4 +1,4 @@
-import User from "../../_entity/user";
+import User from "../../../(shared)/__entities/user";
 import {
   TUpdateUsername,
   TUpdatePassword,

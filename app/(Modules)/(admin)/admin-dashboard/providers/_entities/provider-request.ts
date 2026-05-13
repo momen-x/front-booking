@@ -14,10 +14,6 @@ interface ProvideRequest {
   createdAt: Date;
   updatedAt: Date;
 }
-enum RequestStatus {
-  PENDING,
-  APPROVED,
-  REJECTED,
-}
+
 
 export default ProvideRequest;

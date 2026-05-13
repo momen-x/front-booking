@@ -1,9 +1,7 @@
 import React from "react";
 import ProviderCard from "./_Components/provider-card";
-import UpdateProviderData from "./_Components/update-provider-card-data";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import AddAvailableTimes from "./_Components/add-available-time";
 import Provider from "./entities/provider";
 import { Metadata } from "next";
 
@@ -28,8 +26,6 @@ const ProviderPage = async () => {
           <ProviderCard key={index} {...provider} />
         ))}
       </div>
-      <UpdateProviderData />
-      <AddAvailableTimes />
     </div>
   );
 };

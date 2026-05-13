@@ -2,7 +2,7 @@
 import { useQuery } from "@tanstack/react-query";
 import { resAuth } from "../_repo/resAuth";
 import { CURRENT_USER_QUERY_KEY } from "@/app/utils/constance";
-import User from "../../(users)/_entity/user";
+import User from "../../(shared)/__entities/user";
 
 export const useCurrentUser = () => {
   return useQuery<User | null, Error>({

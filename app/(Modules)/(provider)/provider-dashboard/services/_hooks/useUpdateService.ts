@@ -5,7 +5,7 @@ import {
 } from "@tanstack/react-query";
 import resService from "../_repo/resService";
 import { TUpdateService } from "../_dto/update-service";
-import Service from "@/app/(Modules)/(public)/services/_entity/service";
+import Service from "@/app/(Modules)/(shared)/__entities/service";
 import { SERVICES_KEY } from "./useGetProviderServices";
 
 export const useUpdateService = (): UseMutationResult<

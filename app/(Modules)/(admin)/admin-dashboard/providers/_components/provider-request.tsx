@@ -22,6 +22,7 @@ import {
 import transformingTheDateToATextString from "@/app/(Modules)/utils/date-to-string";
 import ProvideRequest from "../_entities/provider-request";
 import { useState } from "react";
+import Link from "next/link";
 
 const Lightbox = ({
   images,
@@ -137,6 +138,8 @@ const statusConfig = {
 // ── Main component ────────────────────────────────────────────────────────────
 const ProviderRequestCard = (props: ProvideRequest) => {
   const {
+    id,
+    userId,
     status,
     provideName,
     IDNumber,
@@ -330,9 +333,13 @@ const ProviderRequestCard = (props: ProvideRequest) => {
             </div>
 
             {status === "PENDING" && (
-              <Button className="w-full bg-linear-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white">
-                Review Application
-              </Button>
+              <Link
+                href={`/admin-dashboard/providers/add?userId=${userId}&location=${location}&businessName=${provideName}&id=${id}`}
+              >
+                <Button className="w-full bg-linear-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white">
+                  Review Application
+                </Button>
+              </Link>
             )}
           </div>
         </CardContent>

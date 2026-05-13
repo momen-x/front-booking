@@ -18,7 +18,6 @@ const ProviderRequestPage = async () => {
     const errorText = await response.text();
     console.error(`Backend failed with status ${response.status}:`, errorText);
   }
-  console.log("the providerRequests are: ", providerRequests);
   if (providerRequests.length === 0) {
     return <div> no provider requests</div>;
   }

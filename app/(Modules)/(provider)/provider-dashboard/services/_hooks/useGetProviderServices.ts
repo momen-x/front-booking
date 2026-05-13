@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import resService from "../_repo/resService";
-import Service from "@/app/(Modules)/(public)/services/_entity/service";
+import Service from "@/app/(Modules)/(shared)/__entities/service";
 
 export const SERVICES_KEY = "services";
 export const useGetProviderServices = () => {

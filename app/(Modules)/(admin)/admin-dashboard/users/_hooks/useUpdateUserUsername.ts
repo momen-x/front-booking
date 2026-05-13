@@ -4,7 +4,7 @@ import {
   useQueryClient,
 } from "@tanstack/react-query";
 import resUser from "../_repo/resUser";
-import User from "@/app/(Modules)/(users)/_entity/user";
+import User from "@/app/(Modules)/(shared)/__entities/user";
 
 export const useUpdateUserUsername = (
   userId: string,

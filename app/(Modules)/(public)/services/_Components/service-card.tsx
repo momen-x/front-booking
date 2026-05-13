@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import { Clock, Calendar, Star } from "lucide-react";
 import Link from "next/link";
-import Service from "../_entity/service";
+import Service from "../../../(shared)/__entities/service";
 import transformingTheDateToATextString from "@/app/(Modules)/utils/date-to-string";
 
 const defaultImage =

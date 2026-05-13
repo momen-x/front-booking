@@ -10,12 +10,11 @@ import NotificationButton from "./notifications";
 import { useCurrentUser } from "../(Modules)/(auth)/_hooks/useCurrentUser";
 import HeaderSkeleton from "./skeleton-header";
 import { ProfileDropDown } from "./profile-drop-down";
-import { UserRole } from "../(Modules)/(users)/_entity/user";
 
 const navLinks = [
   { href: "/services", label: "Services" },
   { href: "/providers", label: "Providers" },
-  { href: "/how-it-works", label: "How it Works" },
+  { href: "/bookings", label: "Bookings" },
 ];
 
 const Header = () => {
@@ -83,14 +82,24 @@ const Header = () => {
               <>
                 <NotificationButton />
                 <ProfileDropDown />
-                {user.role === UserRole.ADMIN && (
+                {user.role === "ADMIN" && (
                   <Button
                     variant="outline"
                     size="sm"
-                    onClick={() => router.push("/admin")}
+                    onClick={() => router.push("/admin-dashboard")}
                     className="hidden md:flex ml-2"
                   >
                     Admin Panel
+                  </Button>
+                )}
+                {user.role === "PROVIDER" && (
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    onClick={() => router.push("/provider-dashboard")}
+                    className="hidden md:flex ml-2"
+                  >
+                    Provider Panel
                   </Button>
                 )}
               </>

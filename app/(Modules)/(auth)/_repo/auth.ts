@@ -1,4 +1,4 @@
-import User from "../../(users)/_entity/user";
+import User from "../../(shared)/__entities/user";
 import { TLogin } from "../_dto/login";
 import { TProviderRequest } from "../_dto/provider-request";
 import { TRegisterSchema } from "../_dto/register";

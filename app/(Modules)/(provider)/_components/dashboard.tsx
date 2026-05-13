@@ -7,6 +7,8 @@ import {
   Table2,
   Pencil,
   ClipboardPlus,
+  Clock,
+  ClockPlus,
 } from "lucide-react";
 import { useState } from "react";
 import Link from "next/link";
@@ -26,6 +28,16 @@ const pages = [
     icon: Table2,
     label: "Your services table",
     path: "/services/services-table",
+  },
+  {
+    path: "/availability",
+    icon: Clock,
+    label: "Availability",
+  },
+  {
+    path: "/availability/add",
+    icon: ClockPlus,
+    label: "Add Availability Time",
   },
 ];
 const ProviderDashboard = ({ children }: DashboardLayoutProps) => {

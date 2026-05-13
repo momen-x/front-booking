@@ -25,6 +25,7 @@ const UpdateProviderPage = async () => {
         location={provider.location}
         description={provider.description}
         isActive={provider.isActive}
+        redirectPath="/provider-dashboard"
       />
     </div>
   );

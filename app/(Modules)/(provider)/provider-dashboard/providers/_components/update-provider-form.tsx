@@ -17,14 +17,20 @@ const UpdateProviderForm = ({
   businessName,
   location,
   description,
+  userId,
+  redirectPath = "/provider-dashboard",
 }: {
   businessName: string;
   location: string | null;
   description: string | null;
   isActive: boolean;
+  userId?: string;
+  redirectPath?: string;
 }) => {
   const router = useRouter();
-  const { mutate: handleUpdateProvider, isPending } = useUpdateProvider();
+  const { mutate: handleUpdateProvider, isPending } = useUpdateProvider(
+    userId ?? "",
+  );
 
   const form = useForm<TUpdateProvider>({
     resolver: zodResolver(UpdateProviderSchema as any),
@@ -40,7 +46,7 @@ const UpdateProviderForm = ({
     await handleUpdateProvider(data, {
       onSuccess: () => {
         toast.success("Provider updated successfully");
-        router.push("/provider-dashboard");
+        router.push(redirectPath);
       },
       onError: (error) => {
         toast.error(getErrorMessage(error) || "Error updating provider");

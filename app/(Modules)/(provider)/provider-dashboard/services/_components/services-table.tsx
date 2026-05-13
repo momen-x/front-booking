@@ -5,9 +5,15 @@ import { useState } from "react";
 import { LayoutGrid, Table2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import ServiceTable from "@/app/(Modules)/(admin)/admin-dashboard/services/_components/service-table";
-import Service from "@/app/(Modules)/(public)/services/_entity/service";
+import Service from "@/app/(Modules)/(shared)/__entities/service";
 
-const ServicesTable = ({services, isLoading} : {services:Service[],isLoading:boolean}) => {
+const ServicesTable = ({
+  services,
+  isLoading,
+}: {
+  services: Service[];
+  isLoading: boolean;
+}) => {
   // const { data: services, isLoading } = useGetProviderServices();
   const [view, setView] = useState<"table" | "cards">("table");
 

@@ -5,7 +5,7 @@ import {
 } from "@tanstack/react-query";
 import resService from "../_repo/resService";
 import { TService } from "../_dto/add-service";
-import Service from "@/app/(Modules)/(public)/services/_entity/service";
+import Service from "@/app/(Modules)/(shared)/__entities/service";
 import { SERVICES_KEY } from "./useGetProviderServices";
 
 export const useCreateService = (): UseMutationResult<

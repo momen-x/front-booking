@@ -100,7 +100,7 @@ const ProvidersTablePage = async () => {
 
                   <TableCell>
                     <div className="flex items-center justify-center gap-1">
-                      <Link href={`/services/${provider.id}/booking`}>
+                      <Link href={`providers/${provider.id}`}>
                         <Button
                           size="icon"
                           variant="ghost"
@@ -110,7 +110,7 @@ const ProvidersTablePage = async () => {
                         </Button>
                       </Link>
                       <Link
-                        href={`/provider-dashboard/services/${provider.id}/update`}
+                        href={`providers/${provider.id}/update`}
                       >
                         <Button
                           size="icon"

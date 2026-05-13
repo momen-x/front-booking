@@ -5,16 +5,14 @@ import {
 } from "@tanstack/react-query";
 import { TUpdateProvider } from "../_dto/update-provider";
 import resProvider from "../_repository/resProvider";
-import Provider from "../entity/provider";
+import Provider from "../../../../(shared)/__entities/provider";
 
-export const useUpdateProvider = (): UseMutationResult<
-  Provider,
-  Error,
-  TUpdateProvider
-> => {
+export const useUpdateProvider = (
+  id?: string,
+): UseMutationResult<Provider, Error, TUpdateProvider> => {
   const queryClient = useQueryClient();
   return useMutation({
-    mutationFn: resProvider.update,
+    mutationFn: (dto: TUpdateProvider) => resProvider.update(dto, id),
     onSuccess: () => {
       console.log("success");
       queryClient.invalidateQueries({ queryKey: ["provider"] });

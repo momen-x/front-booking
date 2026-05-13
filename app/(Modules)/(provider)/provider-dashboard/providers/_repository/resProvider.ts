@@ -5,8 +5,8 @@ import { TUpdateProvider } from "@/app/(Modules)/(public)/providers/dto/update-p
 const BASE_URL = "/api/provider-profile";
 
 const resProvider: IProviderAPI = {
-  update: async (dto: TUpdateProvider) => {
-    const res = await api.put(BASE_URL, dto);
+  update: async (dto: TUpdateProvider, userId?: string) => {
+    const res = await api.put(`${BASE_URL}/${userId?.trim()}`, dto);
     return res.data;
   },
 };
